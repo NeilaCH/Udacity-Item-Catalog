@@ -1,0 +1,18 @@
+.text-and-icon {
+    margin-right: 8px;
+}
+
+.sections {
+    margin-top: 6%;
+}
+
+.login-box {
+    margin-top: 200px;
+    height: 250px;
+    box-shadow: 2px;
+    transition: box-shadow 400ms;
+}
+
+.container .google-box {
+    text-align: center;
+}
