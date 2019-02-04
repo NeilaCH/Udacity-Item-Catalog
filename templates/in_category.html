@@ -1,0 +1,37 @@
+{% extends "basic.html" %}
+{% block title %}View Items{% endblock %}
+
+{% block content %}
+    <div class="container sections">
+        <center><h1>{{ category.name }}</h1>
+          {%if 'username' not in session %} 
+        <a href="{{ url_for('login') }}"><button type="button" class="btn btn-primary"><i class="far fa-edit text-and-icon"></i>Edit</button></a>
+        {% endif %}
+        </center>
+        {% if session['user_id'] == category.user_id %}
+            <div class="row">
+              <div class="col-md-12">
+                <a href="{{ url_for('edit_category', category_id=category.id) }}"><button class="btn btn-primary"><i class="fas fa-edit text-and-icon"></i>Edit</button></a>
+                <a href="{{ url_for('add_item_by_category', category_id=category.id) }}"><button class="btn btn-success"><i class="fas fa-plus text-and-icon"></i>Add item </button></a>
+                <a href="{{ url_for('delete_category', category_id=category.id) }}"><button class="btn btn-danger"><i class="far fa-trash-alt text-and-icon"></i>Delete</button></a>
+              </div>
+            </div>
+        {% endif %}
+        
+        <div class="col-md-12" style="margin-top: 20px">
+          {% if total == 0 %}
+          <p>There is no items in this category.</p>
+          {% else %}
+          <table class="table table-hover">
+            <tbody>
+            {% for item in items %}
+              <tr>
+                <td><a href="{{ url_for('view_item', item_id=item.id) }}"><p>{{ item.name }}</p></a></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+    </div>
+{% endblock %}
