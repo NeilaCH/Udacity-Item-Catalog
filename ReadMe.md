@@ -3,7 +3,7 @@ Item Catalog application is a project for the Full Stuck Udacity [Nanodegree pro
 The project consists of creating an application that provides a list of items within a variety of categories. User can registre to the application within an  authentication system. Only registered users can post, edit and delete their own items. 
 # Project Structure
 The Item Catalog Application is based on the following structure: 
--main.py
+- main.py
 - list_itmcateg.py
 - database_setup.py
 - client_secrets.json
@@ -42,13 +42,12 @@ Now your machine is ready to run the Item Catalog Application.
 # Instructions to Run the Project
 Step1. Download the Item Catalog Application and unzip it.
 Step2. Copy `Home_Catalog` folder into `fullstack-nanodegree-vm/vagrant`
-Step3. download the data [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) and unzip it. After that copy the `newsdata.sql` into `fullstack-nanodegree-vm/vagrant`
-Step4. In your terminal, run `vagrant@vagrant:~$ cd /vagrant/Home_Catalog`
-Step5. Run `database_setup.py`with this command 
+Step3. In your terminal, run `vagrant@vagrant:~$ cd /vagrant/Home_Catalog`
+Step4. Run `database_setup.py`with this command 
 `vagrant@vagrant:/vagrant$ python database_setup.py` in your terminal.
-Step6. Run `list_itmcateg.py`with this command 
+Step5. Run `list_itmcateg.py`with this command 
 `vagrant@vagrant:/vagrant$ python list_itmcateg.py` in your terminal.
-Step7. Once items and categories are succesfully added, run `main.py`with this command `vagrant@vagrant:/vagrant$ python main.py`.
+Step6. Once items and categories are succesfully added, run `main.py`with this command `vagrant@vagrant:/vagrant$ python main.py`.
 
 As result, the terminal will display [a localhsot link](http://localhost:8000/). Use your favorite browser to open it.
 
