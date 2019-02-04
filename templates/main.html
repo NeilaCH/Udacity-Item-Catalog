@@ -1,0 +1,39 @@
+{% extends "basic.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container sections">
+    <div class="row">
+      <div class="col-md-12">
+          <center><h1>Welcome to Home Decor Catalog</h1>
+            <p> Here you can easily browse different categories of home decor !</center>
+      </div>
+    </div>
+    {% if 'username' in session %}
+    <div class="row">
+      <div class="col-md-12">
+         <div class="text-center">
+        <a href="{{ url_for('add_category') }}"><button class="btn btn-info btn-lg"><i class="fas fa-plus text-and-icon"></i>Add Category</button></a>
+        <a href="{{ url_for('add_item') }}"><button class="btn btn-info btn-lg" href="{{ url_for('add_item') }}"><i class="fas fa-plus text-and-icon"></i>Add Item</button></a>
+      </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+ <div class="p-3 mb-2 bg-light text-dark">
+            <div class="row">
+              <div class="col-md-3 offset-md-1" style="padding-top: 10px;"><h2>Category</h2><hr>
+                {% for category in categories %}
+                  <a href="{{ url_for('show_items_in_category', category_id=category.id) }}"><p>{{ category.name }}</p></a>
+                {% endfor %}
+              </div>
+
+              <div class="col-md-8" style="padding-top: 15px;"><h2>Items</h2><hr>
+                {% for item in items %}
+                  <a href="{{ url_for('view_item', item_id=item.id) }}"><p>{{ item.name }}</p></a>
+                {% endfor %}
+              </div>
+            </div>
+</div>
+{% endblock %}
